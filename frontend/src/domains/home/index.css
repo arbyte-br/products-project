@@ -3,14 +3,14 @@
   }
   
   body {
-    margin: 0px;
+    margin: 0;
     font-family: 'segoe ui';
   }
   
   .nav {
     height: 15em;
     width: 100%;
-    background-color: red;
+    background-color: #C72828;
     position: relative;
   }
   
@@ -40,19 +40,46 @@
   }
 
   .main {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4em;
   }
 
   .main-container {
-      border: 1px solid black;
-      width: 52em;
-      border-radius: .5em;
-      height: 42em;
+    border: 1px solid black;
+    width: 52em;
+    border-radius: .5em;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: flex-start;
   }
-  
+
+  .product-item {
+    width: 15em;
+    height: 23em;
+    margin: 1em;
+    display: flex;
+    border: 1px solid black;
+    flex-direction: column;
+    border-radius: .5em;
+  }
+
+   .product-image {
+        background-color: #FFB85C;
+        height: 40%;
+    }
+    .product-description {
+        background-color: #F0F0F5;
+        height: 45%;
+    }
+    .product-actions {
+        background-color: #E4E4EB;
+        height: 15%;
+    }
+
   @media (max-width:600px) {
     .nav > .nav-btn {
       display: inline-block;
