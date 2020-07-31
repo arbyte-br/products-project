@@ -9,7 +9,9 @@
     <script src='./../../commom/helper/functions.js' defer></script>
     <script src='index.js' defer></script>
     <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
 <body>
     <div class="container">
@@ -21,7 +23,7 @@
 
                 <div class="nav-button">
                     <div class="content-button">Novo Produto</div>
-                    <div class="plus-icon">+</div>
+                    <div class="plus-icon"> <i class='far fa-plus-square'></i></div>
                 </div>
             </div>
         </div>
@@ -36,25 +38,26 @@
                         </div>
                     </div>
                     <div class="product-description">
-                        <div class="info">
-                            <h2>Coca cola</h2>
-                            <pre>Tem muita açucar</pre>
-                            <span>R$10.00</span>
+                        <div class="info-container">
+                            <span class="title">Coca cola</span>
+                            <span class="description">Tem muita açucar</span>
+                            <div class="price">
+                                <span class="currency">R$</span>
+                                <span class="value">10.00</span>
+                            </div>
                         </div>
                     </div>
                     <div class="product-actions">
-                        <div class="itens">
+                        <div class="items">
                             <button id='edit-${id}' onclick='editProduct("edit-${id}")' class="icons"><i
-                                    class="fa fa-edit"></i></button>
+                                    style='font-size:14px' class='far'>&#xf044;</i></button>
                             <button id='delete-${id}' onclick='deleteProduct("product-${id}")' class="icons"><i
-                                    class="fa fa-trash-o"></i></button>
+                                    style='font-size:14px' class='far'>&#xf2ed;</i></button>
                         </div>
                     </div>
-                </div>
-            </div> -->
+                </div> -->
             </div>
         </div>
-
 </body>
 
 </html>
