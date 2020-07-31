@@ -1,8 +1,8 @@
 const createDiv = ({
     id,
-    title,
-    description,
-    value,
+    nome: title,
+    descricao: description,
+    preco: value,
     cover
 }) => {
     const div =
@@ -16,11 +16,11 @@ const createDiv = ({
                 </div>
                 <div class="product-description">
                     <div class="info-container">
-                        <span class="title">Coca cola</span>
-                        <span class="description">Tem muita açucar</span>
+                        <span class="title">${title}</span>
+                        <span class="description">${description}</span>
                         <div class="price">
                             <span class="currency">R$</span>
-                            <span class="value">10.00</span>
+                            <span class="value">${value}</span>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@ const createDiv = ({
                     <div class="items">
                         <button id='edit-${id}' onclick='editProduct("edit-${id}")' class="icons"><i
                                 style='font-size:14px' class='far'>&#xf044;</i></button>
-                        <button id='delete-${id}' onclick='deleteProduct("product-${id}")' class="icons"><i
+                        <button id='delete-${id}' onclick='removeProduct("product-${id}")' class="icons"><i
                                 style='font-size:14px' class='far'>&#xf2ed;</i></button>
                     </div>
                 </div>
@@ -44,7 +44,15 @@ const editProduct = (id) => {
     elem.innerHTML = 'editado';
 }
 
-const deleteProduct = (id) => {
-    const elem = document.getElementById(id);
-    elem.remove();
+const removeProduct = async (id) => {
+    try {
+        const [, resolvedId] = id.split('-');
+        await deleteProducts(resolvedId);
+
+        const elem = document.getElementById(id);
+        elem.remove();
+    } catch (error) {
+        alert('Deu ruim');
+    }
+
 }

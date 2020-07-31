@@ -6,18 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Arbyte</title>
     <style></style>
-    <script src='./../../commom/helper/functions.js' defer></script>
-    <script src='index.js' defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+    <script src="./repository/products.js"></script>
+    <script src="./../../commom/helper/functions.js" defer></script>
+    <script src="index.js" defer></script>
     <link rel="stylesheet" href="index.css" />
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src='./repository/products.js'></script>
 
 <body>
-    <button onclick="fn()"></button>
     <div class="container">
         <div class="nav-header">
             <div class="information">
@@ -55,7 +54,7 @@
                         <div class="items">
                             <button id='edit-${id}' onclick='editProduct("edit-${id}")' class="icons"><i
                                     style='font-size:14px' class='far'>&#xf044;</i></button>
-                            <button id='delete-${id}' onclick='deleteProduct("product-${id}")' class="icons"><i
+                            <button id='delete-${id}' onclick='removeProduct("product-${id}")' class="icons"><i
                                     style='font-size:14px' class='far'>&#xf2ed;</i></button>
                         </div>
                     </div>
