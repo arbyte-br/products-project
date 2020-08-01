@@ -13,7 +13,7 @@ const loadProducts = async () => {
 
 }
 
-const createOrUpdateProduct = async () => {
+const createProducts = async () => {
     try {
         const form = document.getElementById('createOrUpdateProduct');
         const {
@@ -32,7 +32,7 @@ const createOrUpdateProduct = async () => {
             productCover: productCover.value
         }
 
-        await createProducts(inputsValues);
+        await createProduct(inputsValues);
 
         alert('deu bom');
 

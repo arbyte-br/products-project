@@ -13,7 +13,7 @@ const deleteProducts = async (id) => {
     return axios.delete(URL);
 }
 
-const createProducts = async ({
+const createProduct = async ({
     productName,
     productPrice,
     productDecription,
@@ -26,5 +26,25 @@ const createProducts = async ({
         productDecription,
         productCategoryId,
         productCover,
+    });
+}
+
+const updateProduct = async ({
+    productName,
+    productPrice,
+    productDecription,
+    productCategoryId,
+    productCover,
+    id
+}) => {
+    const URL = `${defaultURL}/${id}`;
+
+    return axios.put(URL, {
+        id,
+        productName,
+        productPrice,
+        productDecription,
+        productCategoryId,
+        productCover
     });
 }

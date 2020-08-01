@@ -1,20 +1,28 @@
 {
   "produtos": [
     {
-      "productName": "jow",
-      "productPrice": "10.00",
-      "productDecription": "jow paulista",
-      "productCategoryId": "1",
-      "productCover": "https://apucarana.cidadecancao.com/media/catalog/product/cache/1/image/420x565/9df78eab33525d08d6e5fb8d27136e95/5/4/54ddb42ce68468545402a7e7692252fa0041c5.png_2.png",
-      "id": 3
+      "id": 3,
+      "productName": "teste",
+      "productPrice": 20,
+      "productDecription": "hasusa",
+      "productCategoryId": 2,
+      "productCover": "http"
     },
     {
-      "productName": "rxh",
-      "productPrice": "8181",
-      "productDecription": "jhq",
-      "productCategoryId": "ahhas",
-      "productCover": "https://apucarana.cidadecancao.com/media/catalog/product/cache/1/image/420x565/9df78eab33525d08d6e5fb8d27136e95/5/4/54ddb42ce68468545402a7e7692252fa0041c5.png_2.png",
-      "id": 4
+      "id": 6,
+      "productName": "teste",
+      "productPrice": 20,
+      "productDecription": "hasusa",
+      "productCategoryId": 2,
+      "productCover": "http"
+    },
+    {
+      "id": 7,
+      "productName": "teste",
+      "productPrice": 20,
+      "productDecription": "hasusa",
+      "productCategoryId": 2,
+      "productCover": "http"
     }
   ],
   "categorias": [
