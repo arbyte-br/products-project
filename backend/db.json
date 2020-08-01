@@ -1,11 +1,20 @@
 {
   "produtos": [
     {
-      "id": 1,
-      "nome": "richard henrique",
-      "descricao": "Pão, bife de hambúrguer 90g, salada e batata.",
-      "preco": 8.5,
-      "categoria_id": 1
+      "productName": "jow",
+      "productPrice": "10.00",
+      "productDecription": "jow paulista",
+      "productCategoryId": "1",
+      "productCover": "https://apucarana.cidadecancao.com/media/catalog/product/cache/1/image/420x565/9df78eab33525d08d6e5fb8d27136e95/5/4/54ddb42ce68468545402a7e7692252fa0041c5.png_2.png",
+      "id": 3
+    },
+    {
+      "productName": "rxh",
+      "productPrice": "8181",
+      "productDecription": "jhq",
+      "productCategoryId": "ahhas",
+      "productCover": "https://apucarana.cidadecancao.com/media/catalog/product/cache/1/image/420x565/9df78eab33525d08d6e5fb8d27136e95/5/4/54ddb42ce68468545402a7e7692252fa0041c5.png_2.png",
+      "id": 4
     }
   ],
   "categorias": [

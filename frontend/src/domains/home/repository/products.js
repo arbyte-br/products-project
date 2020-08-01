@@ -12,3 +12,19 @@ const deleteProducts = async (id) => {
 
     return axios.delete(URL);
 }
+
+const createProducts = async ({
+    productName,
+    productPrice,
+    productDecription,
+    productCategoryId,
+    productCover,
+}) => {
+    return axios.post(defaultURL, {
+        productName,
+        productPrice,
+        productDecription,
+        productCategoryId,
+        productCover,
+    });
+}
