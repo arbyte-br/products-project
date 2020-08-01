@@ -1,28 +1,32 @@
 {
   "produtos": [
     {
-      "id": 3,
-      "productName": "teste",
-      "productPrice": 20,
-      "productDecription": "hasusa",
-      "productCategoryId": 2,
-      "productCover": "http"
+      "productName": "Richard",
+      "productPrice": "10.00",
+      "productDecription": "Coca cola do richard",
+      "productCover": "https://i.dlpng.com/static/png/6950877_preview.png",
+      "id": 20
     },
     {
-      "id": 6,
+      "id": 21,
       "productName": "teste",
-      "productPrice": 20,
-      "productDecription": "hasusa",
-      "productCategoryId": 2,
-      "productCover": "http"
+      "productPrice": 71767.89,
+      "productDecription": "hjktyuio",
+      "productCover": "https://i.dlpng.com/static/png/6950877_preview.png"
     },
     {
-      "id": 7,
-      "productName": "teste",
-      "productPrice": 20,
-      "productDecription": "hasusa",
-      "productCategoryId": 2,
-      "productCover": "http"
+      "productName": "te",
+      "productPrice": "717",
+      "productDecription": "gfd",
+      "productCover": "https://i.dlpng.com/static/png/6950877_preview.png",
+      "id": 22
+    },
+    {
+      "productName": "coca cola",
+      "productPrice": "R$ 56,78",
+      "productDecription": "23456",
+      "productCover": "https://apucarana.cidadecancao.com/media/catalog/product/cache/1/image/420x565/9df78eab33525d08d6e5fb8d27136e95/5/4/54ddb42ce68468545402a7e7692252fa0041c5.png_2.png",
+      "id": 25
     }
   ],
   "categorias": [

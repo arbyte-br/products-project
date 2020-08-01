@@ -40,7 +40,13 @@ const createDiv = ({
                 </div>
                 <div class="product-actions">
                     <div class="items">
-                        <button id='edit-${id}' onclick='editProduct(${id})' class="icons"><i
+                        <button id='edit-${id}' onclick='openAddOrEditProductModal({
+                            id: ${id},
+                            productName: "${productName}",
+                            productDecription: "${productDecription}",
+                            productPrice: "${productPrice}",
+                            productCover: "${productCover}"
+                        })' class="icons"><i
                                 style='font-size:14px' class='far'>&#xf044;</i></button>
                         <button id='delete-${id}' onclick='removeProduct("product-${id}")' class="icons"><i
                                 style='font-size:14px' class='far'>&#xf2ed;</i></button>
@@ -51,38 +57,4 @@ const createDiv = ({
     </div>`;
 
     return div;
-}
-
-const editProduct = async (id) => {
-    try {
-        const inputsValues = {
-            id,
-            productName: 'teste',
-            productPrice: 20.00,
-            productDecription: 'hasusa',
-            productCategoryId: 2,
-            productCover: 'http'
-        }
-
-        await updateProduct(inputsValues);
-
-        console.log('deu bom')
-    } catch (error) {
-        console.log(error)
-    }
-}
-
-const removeProduct = async (id) => {
-    try {
-        const [, resolvedId] = id.split('-');
-        await deleteProducts(resolvedId);
-
-        const elem = document.getElementById(id);
-        elem.remove();
-
-        console.log('Deu Bom')
-    } catch (error) {
-        alert('Deu ruim');
-    }
-
 }

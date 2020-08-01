@@ -17,14 +17,12 @@ const createProduct = async ({
     productName,
     productPrice,
     productDecription,
-    productCategoryId,
     productCover,
 }) => {
     return axios.post(defaultURL, {
         productName,
         productPrice,
         productDecription,
-        productCategoryId,
         productCover,
     });
 }
@@ -33,7 +31,6 @@ const updateProduct = async ({
     productName,
     productPrice,
     productDecription,
-    productCategoryId,
     productCover,
     id
 }) => {
@@ -44,7 +41,6 @@ const updateProduct = async ({
         productName,
         productPrice,
         productDecription,
-        productCategoryId,
         productCover
     });
 }

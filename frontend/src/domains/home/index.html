@@ -5,14 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Arbyte</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
-    <script src="./repository/products.js"></script>
-    <script src="./../../commom/helper/functions.js" defer></script>
-    <script src="index.js" defer></script>
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./modal/index.css" />
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+
+    <script src="./repository/products.js" defer></script>
+    <script src="./modal/index.js" defer></script>
+    <script src="./../../commom/helper/functions.js" defer></script>
+    <script src="./../../commom/helper/validFormFields.js" defer></script>
+    <script src="index.js" defer></script>
 
 <body>
     <div class="container">
@@ -23,8 +31,8 @@
                 </div>
 
                 <div class="nav-button">
-                    <div id="myBtn" class="content-button">Novo Produto</div>
-                    <div class="plus-icon"> <i class='far fa-plus-square'></i></div>
+                    <div id="addProduct" onclick="openAddOrEditProductModal()" class="content-button">Novo Produto</div>
+                    <div class="plus-icon"> <i class="fa fa-plus-square-o"></i></div>
                 </div>
             </div>
         </div>
@@ -35,50 +43,55 @@
         </div>
 </body>
 
-<div id="myModal" class="modal">
-    <form id="createOrUpdateProduct" class="modal-content">
-        <span class="close">&times;</span>
-        <span>Nome do produto</span>
-        <input name="productName" id="product-name" />
-        <span>valor do produto</span>
-        <input name="productPrice" id="product-price" />
-        <span>descrição do produto</span>
-        <input name="productDecription" id="product-description" />
-        <span>categoria do produto</span>
-        <input name="productCategoryId" id="product-category" />
-        <span>capa do produto</span>
-        <input name="productCover" id="product-cover" />
-        <button onclick="createProducts()">SALVAR PRODUTO</button>
-    </form>
-</div>
+<div id="addOrUpdateProductModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <span class="title" id="createOrUpdateTitle">Novo Produto</span>
+        </div>
+        <div class="modal-body">
+            <form id="createOrUpdateProduct" class="product-description-create-and-update">
+                <input type="hidden" id="identifier" name="identifier">
 
-<!-- TODO: APAGAR -->
-<script>
-    // Get the modal
-    var modal = document.getElementById("myModal");
+                <di class="field">
+                    <span class="label">URL da imagem</span>
+                    <input autocomplete="off" onfocus="clearError('productCoverError')" required="true" class="input"
+                        placeholder="Cole o link aqui" name="productCover" minlength="10" id="product-cover" />
+                    <span class="error" id="productCoverError">erradaum</span>
+                </di>
 
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
+                <div class="description-container">
+                    <di class="field name">
+                        <span class="label">Nome do produto</span>
+                        <input autocomplete="off" onfocus="clearError('productNameError')" class="input"
+                            name="productName" id="product-name" />
+                        <span class="error" id="productNameError"></span>
+                    </di>
 
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+                    <di class="field price">
+                        <span class="label">Preço</span>
+                        <input autocomplete="off" onfocus="clearError('productPriceError')" class="input ValoresItens"
+                            name="productPrice" id="product-price" />
+                        <span class="error" id="productPriceError"></span>
+                    </di>
+                </div>
 
-    // When the user clicks the button, open the modal 
-    btn.onclick = function () {
-        modal.style.display = "block";
-    }
+                <di class="field">
+                    <span class="label">Descrição do produto</span>
+                    <input autocomplete="off" onfocus="clearError('productDecriptionError')" class="input"
+                        name="productDecription" id="product-description" />
+                    <span class="error" id="productDecriptionError"></span>
+                </di>
 
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
+                <div class="footer">
 
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-</script>
+                    <div class="nav-button" id="createOrProductSubmit" onclick="createOrUpdateProducts()">
+                        <div id="addOrUpdateProduct" class="content-button">Adicionar produto</div>
+                        <div class="plus-icon"> <i class="fa fa-check-square-o"></i></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
 </html>
