@@ -35,6 +35,26 @@ body {
     cursor: pointer;
 }
 
+.nav-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-icon {
+    width: 6.5em;
+}
+
+.nav-text {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5em;
+    line-height: 32px;
+    color: #FFFFFF;
+    margin-left: -.7em;
+}
+
 .content-button {
     background-color: #39B100;
     width: 71%;
@@ -192,5 +212,13 @@ body {
     .main-container {
         justify-content: center;
         align-items: center;
+    }
+
+    .nav-title {
+        margin-bottom: 1em;
+    }
+
+    .nav-icon {
+        margin-left: -68px;
     }
 }

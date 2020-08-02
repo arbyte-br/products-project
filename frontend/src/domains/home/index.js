@@ -6,6 +6,11 @@ $(document).ready(function () {
     });
 });
 
+const showPage = () => {
+    document.getElementById('loader').style.display = 'none';
+    document.getElementById('main-information').style.display = 'flex';
+}
+
 const loadProducts = async () => {
     const {
         data
@@ -19,6 +24,9 @@ const loadProducts = async () => {
         mainContainer.insertAdjacentHTML('beforeend', product);
     });
 
+    setTimeout(() => {
+        showPage();
+    }, 2000);
 }
 
 const callRepositoryToCreateOrUpdate = async (id, inputsValues) => {
@@ -68,6 +76,8 @@ const callFinishModalState = (isUpdate) => {
 };
 
 const createOrUpdateProducts = async () => {
+    initModlaLoading();
+
     try {
         const form = document.getElementById('createOrUpdateProduct');
 
@@ -99,9 +109,13 @@ const createOrUpdateProducts = async () => {
 
         const isUpdate = await callRepositoryToCreateOrUpdate(identifierValue, inputsValues);
 
+        stopModlaLoading();
+
         return callFinishModalState(isUpdate);
 
     } catch (error) {
+        stopModlaLoading();
+
         if (error.length) {
             error.forEach(item => {
                 const element = document.getElementById(item.field);

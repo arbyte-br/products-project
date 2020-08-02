@@ -1,4 +1,5 @@
 const defaultErrors = ['productCoverError', 'productNameError', 'productPriceError', 'productDecriptionError'];
+const loading = document.getElementById('modal-loader');
 
 const resolveModalData = async ({
     id,
@@ -48,6 +49,14 @@ const clearError = (input) => {
     const element = document.getElementById(input);
     element.style.display = 'none';
     return;
+}
+
+const initModlaLoading = () => {
+    loading.style.display = 'block';
+}
+
+const stopModlaLoading = () => {
+    loading.style.display = 'none';
 }
 
 const openAddOrEditProductModal = async (params) => {

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Arbyte</title>
+    <link rel="stylesheet" href="./../../commom/styles/loader.css">
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="./modal/index.css" />
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
@@ -23,11 +24,14 @@
     <script src="index.js" defer></script>
 
 <body>
+    <div class="loader" id="loader"></div>
+
     <div class="container">
         <div class="nav-header">
             <div class="information">
                 <div class="nav-title">
-                    <img src="../../public/static/images/logo.png" alt="logo" class="">
+                    <img class="nav-icon" src="../../public/static/images/logo-icon.png" alt="logo">
+                    <span class="nav-text">Product project</span>
                 </div>
 
                 <div class="nav-button">
@@ -36,68 +40,73 @@
                 </div>
             </div>
         </div>
-        <div class="main">
+        <div class="main animate-bottom" id="main-information">
             <div class="main-container" id="main-container">
 
             </div>
         </div>
-</body>
+    </div>
 
-<div id="addOrUpdateProductModal" class="modal">
-    <div class="modal-content" id="modalContent">
-        <div class="modal-header">
-            <span class="close">&times;</span>
-            <span class="title" id="createOrUpdateTitle">Novo Produto</span>
-        </div>
-        <div class="modal-body">
-            <form id="createOrUpdateProduct" class="product-description-create-and-update">
-                <input type="hidden" id="identifier" name="identifier">
+    <div id="addOrUpdateProductModal" class="modal">
+        <div class="loader modal-top-loader" id="modal-loader"></div>
 
-                <di class="field">
-                    <span class="label">URL da imagem</span>
-                    <input autocomplete="off" onfocus="clearError('productCoverError')" required="true" class="input"
-                        placeholder="Cole o link aqui" name="productCover" minlength="10" id="product-cover" />
-                    <span class="error" id="productCoverError">erradaum</span>
-                </di>
+        <div class="modal-content" id="modalContent">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <span class="title" id="createOrUpdateTitle">Novo Produto</span>
+            </div>
 
-                <div class="description-container">
-                    <di class="field name">
-                        <span class="label">Nome do produto</span>
-                        <input autocomplete="off" onfocus="clearError('productNameError')" class="input"
-                            name="productName" id="product-name" />
-                        <span class="error" id="productNameError"></span>
+            <div class="modal-body">
+                <form id="createOrUpdateProduct" class="product-description-create-and-update">
+                    <input type="hidden" id="identifier" name="identifier">
+
+                    <di class="field">
+                        <span class="label">URL da imagem</span>
+                        <input autocomplete="off" onfocus="clearError('productCoverError')" required="true"
+                            class="input" placeholder="Cole o link aqui" name="productCover" minlength="10"
+                            id="product-cover" />
+                        <span class="error" id="productCoverError">erradaum</span>
                     </di>
 
-                    <di class="field price">
-                        <span class="label">Preço</span>
-                        <input autocomplete="off" onfocus="clearError('productPriceError')" class="input ValoresItens"
-                            name="productPrice" id="product-price" />
-                        <span class="error" id="productPriceError"></span>
-                    </di>
-                </div>
+                    <div class="description-container">
+                        <di class="field name">
+                            <span class="label">Nome do produto</span>
+                            <input autocomplete="off" onfocus="clearError('productNameError')" class="input"
+                                name="productName" id="product-name" />
+                            <span class="error" id="productNameError"></span>
+                        </di>
 
-                <di class="field">
-                    <span class="label">Descrição do produto</span>
-                    <input autocomplete="off" onfocus="clearError('productDecriptionError')" class="input"
-                        name="productDecription" id="product-description" />
-                    <span class="error" id="productDecriptionError"></span>
-                </di>
-
-                <div class="footer">
-
-                    <div class="nav-button" id="createOrProductSubmit" onclick="createOrUpdateProducts()">
-                        <div id="addOrUpdateProduct" class="content-button">Adicionar produto</div>
-                        <div class="plus-icon"> <i class="fa fa-check-square-o"></i></div>
+                        <di class="field price">
+                            <span class="label">Preço</span>
+                            <input autocomplete="off" onfocus="clearError('productPriceError')"
+                                class="input ValoresItens" name="productPrice" id="product-price" />
+                            <span class="error" id="productPriceError"></span>
+                        </di>
                     </div>
-                </div>
-            </form>
+
+                    <di class="field">
+                        <span class="label">Descrição do produto</span>
+                        <input autocomplete="off" onfocus="clearError('productDecriptionError')" class="input"
+                            name="productDecription" id="product-description" />
+                        <span class="error" id="productDecriptionError"></span>
+                    </di>
+
+                    <div class="footer">
+
+                        <div class="nav-button" id="createOrProductSubmit" onclick="createOrUpdateProducts()">
+                            <div id="addOrUpdateProduct" class="content-button">Adicionar produto</div>
+                            <div class="plus-icon"> <i class="fa fa-check-square-o"></i></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="finish-modal" id="finishModalState">
+            <span class="finish-icon"><img src="../../public/static/images/success-icon.png" alt="icon"></span>
+            <span class="finish-text" id="finishText"></span>
         </div>
     </div>
-
-    <div class="finish-modal" id="finishModalState">
-        <span class="finish-icon"><img src="../../public/static/images/success-icon.png" alt="icon"></span>
-        <span class="finish-text" id="finishText"></span>
-    </div>
-</div>
+</body>
 
 </html>

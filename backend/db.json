@@ -2,7 +2,7 @@
   "produtos": [
     {
       "id": 20,
-      "productName": "Richard ehj",
+      "productName": "Richard",
       "productPrice": 0.01,
       "productDecription": "Coca cola do richard",
       "productCover": "http://www.pngmart.com/files/1/Coca-Cola-PNG-Photos.png"
@@ -20,6 +20,27 @@
       "productDecription": "sdfghjk",
       "productCover": "http://www.pngmart.com/files/1/Coca-Cola-PNG-Photos.png",
       "id": 29
+    },
+    {
+      "productName": "javascript",
+      "productPrice": 456.78,
+      "productDecription": "dfghj",
+      "productCover": "https://cdn.iconscout.com/icon/free/png-512/javascript-20-555998.png",
+      "id": 30
+    },
+    {
+      "productName": "javascript",
+      "productPrice": 1167.81,
+      "productDecription": "teste do javascript",
+      "productCover": "https://i.dlpng.com/static/png/511529_preview.png",
+      "id": 31
+    },
+    {
+      "productName": "javascript",
+      "productPrice": 0.11,
+      "productDecription": "sddsa",
+      "productCover": "https://i.dlpng.com/static/png/511529_preview.png",
+      "id": 32
     }
   ],
   "categorias": [
