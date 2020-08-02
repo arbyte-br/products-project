@@ -1,3 +1,5 @@
+const defaultErrors = ['productCoverError', 'productNameError', 'productPriceError', 'productDecriptionError'];
+
 const resolveModalData = async ({
     id,
     productName: name,
@@ -49,13 +51,14 @@ const clearError = (input) => {
 }
 
 const openAddOrEditProductModal = async (params) => {
+    defaultErrors.forEach(item => clearError(item));
+
     const modal = document.getElementById("addOrUpdateProductModal");
     const closeButton = document.getElementsByClassName("close")[0];
 
     await resolveModalData({
         ...params
     });
-
 
     modal.style.display = 'block';
 

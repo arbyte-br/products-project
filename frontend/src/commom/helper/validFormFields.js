@@ -14,7 +14,7 @@ const validFormFields = async ({
         errors.push({
             field: 'productCoverError',
             message: '* URL inválida'
-        });
+        })
     }
 
     const params = [{
@@ -31,6 +31,11 @@ const validFormFields = async ({
             value: productDecription,
             field: 'productDecriptionError',
             description: 'A descrição do produto'
+        },
+        {
+            value: productCover,
+            field: 'productCoverError',
+            description: 'A URL da imagem'
         }
     ];
 
