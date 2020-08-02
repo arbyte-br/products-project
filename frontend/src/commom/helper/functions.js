@@ -1,3 +1,8 @@
+const cropWord = (word, maxCharLength) => {
+    return word.length > maxCharLength ?
+        `${word.substring(0, maxCharLength - 3)}...` : word;
+}
+
 const createDiv = ({
     id,
     productName,
@@ -5,6 +10,9 @@ const createDiv = ({
     productPrice,
     productCover
 }) => {
+    const resolveTitle = cropWord(productName, 16)
+    const resolvedDescription = cropWord(productDecription, 60);
+
     const div =
         `<div class="product-item" id='product-${id}'>
                 <div class="product-image">
@@ -21,12 +29,12 @@ const createDiv = ({
                         <span 
                             name="productName"
                             class="title">
-                            ${productName}
+                            ${resolveTitle}
                         </span>
                         <span
                             name="productDecription"
                             class="description">
-                            ${productDecription}
+                            ${resolvedDescription}
                         </span>
                         <div class="price">
                             <span class="currency">R$</span>

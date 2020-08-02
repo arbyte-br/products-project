@@ -95,7 +95,6 @@ body {
     max-width: 59em;
     height: 100%;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     align-content: flex-start;
 }
