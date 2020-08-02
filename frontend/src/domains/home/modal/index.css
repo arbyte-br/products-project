@@ -212,4 +212,9 @@
     .modal-content {
         min-width: 92%;
     }
+
+    .modal-body .footer {
+        align-items: center;
+        justify-content: center;
+    }
 }
