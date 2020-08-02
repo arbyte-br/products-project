@@ -1,32 +1,25 @@
 {
   "produtos": [
     {
-      "productName": "Richard",
-      "productPrice": "10.00",
+      "id": 20,
+      "productName": "Richard ehj",
+      "productPrice": 0.01,
       "productDecription": "Coca cola do richard",
-      "productCover": "https://i.dlpng.com/static/png/6950877_preview.png",
-      "id": 20
-    },
-    {
-      "id": 21,
-      "productName": "teste",
-      "productPrice": 71767.89,
-      "productDecription": "hjktyuio",
       "productCover": "https://i.dlpng.com/static/png/6950877_preview.png"
     },
     {
-      "productName": "te",
-      "productPrice": "717",
-      "productDecription": "gfd",
-      "productCover": "https://i.dlpng.com/static/png/6950877_preview.png",
-      "id": 22
+      "id": 25,
+      "productName": "coca cola 2 3",
+      "productPrice": 56.78,
+      "productDecription": "23456",
+      "productCover": "https://apucarana.cidadecancao.com/media/catalog/product/cache/1/image/420x565/9df78eab33525d08d6e5fb8d27136e95/5/4/54ddb42ce68468545402a7e7692252fa0041c5.png_2.png"
     },
     {
-      "productName": "coca cola",
-      "productPrice": "R$ 56,78",
-      "productDecription": "23456",
-      "productCover": "https://apucarana.cidadecancao.com/media/catalog/product/cache/1/image/420x565/9df78eab33525d08d6e5fb8d27136e95/5/4/54ddb42ce68468545402a7e7692252fa0041c5.png_2.png",
-      "id": 25
+      "productName": "dfghjk",
+      "productPrice": 345.67,
+      "productDecription": "sdfghjk",
+      "productCover": "http://www.pngmart.com/files/1/Coca-Cola-PNG-Photos.png",
+      "id": 29
     }
   ],
   "categorias": [

@@ -22,14 +22,21 @@ const loadProducts = async () => {
 }
 
 const callRepositoryToCreateOrUpdate = async (id, inputsValues) => {
+    let isUpdate = false;
+
     if (id && !isNaN(+id)) {
-        return updateProduct({
+        await updateProduct({
             id,
             ...inputsValues
         });
+
+        isUpdate = true;
+        return isUpdate;
+
     }
 
-    return createProduct(inputsValues);
+    await createProduct(inputsValues);
+    return isUpdate;
 
 }
 
@@ -43,6 +50,22 @@ const resolvePrice = async (price) => {
     const valueWithouMask = /\d+.\d+/.exec(value)[0].toString();
     return +valueWithouMask;
 }
+
+const callFinishModalState = (isUpdate) => {
+    const modalContent = document.getElementById('modalContent');
+    const finishModal = document.getElementById('finishModalState');
+    const finishText = document.getElementById('finishText');
+    finishText.innerText = isUpdate ?
+        'Produto atualizado!' :
+        'Produto adicionado!';
+
+    modalContent.remove();
+    finishModal.style.display = 'flex';
+
+    setTimeout(() => {
+        window.location.reload();
+    }, 1000);
+};
 
 const createOrUpdateProducts = async () => {
     try {
@@ -74,9 +97,9 @@ const createOrUpdateProducts = async () => {
             productCover: productCover.value
         }
 
-        await callRepositoryToCreateOrUpdate(identifierValue, inputsValues);
+        const isUpdate = await callRepositoryToCreateOrUpdate(identifierValue, inputsValues);
 
-        alert('deu bom');
+        return callFinishModalState(isUpdate);
 
     } catch (error) {
         if (error.length) {
@@ -97,8 +120,6 @@ const removeProduct = async (id) => {
 
         const elem = document.getElementById(id);
         elem.remove();
-
-        console.log('Deu Bom')
     } catch (error) {
         alert('Deu ruim');
     }

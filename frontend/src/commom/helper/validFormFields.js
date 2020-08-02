@@ -4,6 +4,19 @@ const validFormFields = async ({
     productDecription,
     productCover
 }) => {
+    const errors = [];
+
+    try {
+        await axios.get(`https://cors-anywhere.herokuapp.com/${productCover}`, {
+            responseType: 'arraybuffer'
+        });
+    } catch (error) {
+        errors.push({
+            field: 'productCoverError',
+            message: '* URL inválida'
+        });
+    }
+
     const params = [{
             value: productName,
             field: 'productNameError',
@@ -18,15 +31,9 @@ const validFormFields = async ({
             value: productDecription,
             field: 'productDecriptionError',
             description: 'A descrição do produto'
-        },
-        {
-            value: productCover,
-            field: 'productCoverError',
-            description: 'A URL da imagem'
         }
     ];
 
-    const errors = [];
 
     params.forEach(({
         value,
@@ -50,6 +57,8 @@ const validFormFields = async ({
             };
 
             errors.push(customError);
+
+            return;
         }
     });
 
