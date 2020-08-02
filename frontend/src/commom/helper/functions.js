@@ -6,12 +6,12 @@ const cropWord = (word, maxCharLength) => {
 const createDiv = ({
     id,
     productName,
-    productDecription,
+    productDescription,
     productPrice,
     productCover
 }) => {
     const resolveTitle = cropWord(productName, 16)
-    const resolvedDescription = cropWord(productDecription, 60);
+    const resolvedDescription = cropWord(productDescription, 60);
 
     const div =
         `<div class="product-item" id='product-${id}'>
@@ -32,7 +32,7 @@ const createDiv = ({
                             ${resolveTitle}
                         </span>
                         <span
-                            name="productDecription"
+                            name="productDescription"
                             class="description">
                             ${resolvedDescription}
                         </span>
@@ -48,14 +48,15 @@ const createDiv = ({
                 </div>
                 <div class="product-actions">
                     <div class="items">
-                        <button id='edit-${id}' onclick='openAddOrEditProductModal({
-                            id: ${id},
-                            productName: "${productName}",
-                            productDecription: "${productDecription}",
-                            productPrice: "${productPrice}",
-                            productCover: "${productCover}"
-                        })' class="icons"><i
-                                style='font-size:14px' class='far'>&#xf044;</i></button>
+                        <button id='edit-${id}' onclick='openAddOrEditProductModal(
+                            "${id}",
+                            "${productName}",
+                            "${productDescription}",
+                            "${productPrice}",
+                            "${productCover}")'
+                        class="icons">
+                        <i style='font-size:14px' class='far'>&#xf044;</i>
+                        </button>
                         <button id='delete-${id}' onclick='removeProduct("product-${id}")' class="icons"><i
                                 style='font-size:14px' class='far'>&#xf2ed;</i></button>
                     </div>

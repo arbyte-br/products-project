@@ -1,7 +1,7 @@
-const defaultURL = 'http://localhost:3000/produtos';
+const defaultURL = 'https://product-project-backend.herokuapp.com/products';
 
 const listProducts = async (id) => {
-    const URL = id ? `${defaultURL}/${id}` : defaultURL;
+    const URL = id ? `${defaultURL}?id=${id}` : defaultURL;
 
     const products = await axios.get(URL);
     return products;
@@ -14,33 +14,32 @@ const deleteProducts = async (id) => {
 }
 
 const createProduct = async ({
-    productName,
-    productPrice,
-    productDecription,
-    productCover,
+    productName: name,
+    productPrice: price,
+    productDescription: description,
+    productCover: cover,
 }) => {
     return axios.post(defaultURL, {
-        productName,
-        productPrice,
-        productDecription,
-        productCover,
+        name,
+        price,
+        description,
+        cover
     });
 }
 
 const updateProduct = async ({
-    productName,
-    productPrice,
-    productDecription,
-    productCover,
+    productName: name,
+    productPrice: price,
+    productDescription: description,
+    productCover: cover,
     id
 }) => {
-    const URL = `${defaultURL}/${id}`;
+    const URL = `${defaultURL}?id=${id}`;
 
     return axios.put(URL, {
-        id,
-        productName,
-        productPrice,
-        productDecription,
-        productCover
+        name,
+        price,
+        description,
+        cover
     });
 }

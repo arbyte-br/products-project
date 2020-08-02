@@ -87,7 +87,7 @@ const createOrUpdateProducts = async () => {
             },
             productName,
             productPrice,
-            productDecription,
+            productDescription,
             productCover
         } = form;
 
@@ -96,14 +96,14 @@ const createOrUpdateProducts = async () => {
         await validFormFields({
             productName: productName.value,
             productPrice: price,
-            productDecription: productDecription.value,
+            productDescription: productDescription.value,
             productCover: productCover.value
         });
 
         const inputsValues = {
             productName: productName.value,
             productPrice: price,
-            productDecription: productDecription.value,
+            productDescription: productDescription.value,
             productCover: productCover.value
         }
 

@@ -86,7 +86,7 @@
 .close:focus {
     color: #000;
     text-decoration: none;
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 .modal-header {

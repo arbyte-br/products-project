@@ -1,7 +1,7 @@
 const validFormFields = async ({
     productName,
     productPrice,
-    productDecription,
+    productDescription,
     productCover
 }) => {
     const errors = [];
@@ -28,8 +28,8 @@ const validFormFields = async ({
             description: 'O preço'
         },
         {
-            value: productDecription,
-            field: 'productDecriptionError',
+            value: productDescription,
+            field: 'productDescriptionError',
             description: 'A descrição do produto'
         },
         {

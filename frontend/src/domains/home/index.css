@@ -32,7 +32,7 @@ body {
     display: flex;
     height: 3em;
     width: 12em;
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 .nav-title {
@@ -192,7 +192,7 @@ body {
 }
 
 .product-actions .items .icons {
-    cursor: pointer;
+    cursor: pointer !important;
     outline: none;
     padding: 0;
     border: none;

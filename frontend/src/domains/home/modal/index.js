@@ -1,10 +1,10 @@
-const defaultErrors = ['productCoverError', 'productNameError', 'productPriceError', 'productDecriptionError'];
+const defaultErrors = ['productCoverError', 'productNameError', 'productPriceError', 'productDescriptionError'];
 const loading = document.getElementById('modal-loader');
 
 const resolveModalData = async ({
     id,
     productName: name,
-    productDecription: description,
+    productDescription: description,
     productPrice: price,
     productCover: cover
 } = {}) => {
@@ -16,14 +16,14 @@ const resolveModalData = async ({
     const {
         productName,
         productPrice,
-        productDecription,
+        productDescription,
         productCover
     } = form;
 
     if (!id) {
         productName.value = null;
         productPrice.value = null;
-        productDecription.value = null;
+        productDescription.value = null;
         productCover.value = null;
 
         createOrUpdateTitle.innerText = 'Novo Produto';
@@ -35,7 +35,7 @@ const resolveModalData = async ({
 
     productName.value = name;
     productPrice.value = price;
-    productDecription.value = description;
+    productDescription.value = description;
     productCover.value = cover;
 
     createOrUpdateTitle.innerText = 'Atualizar Produto';
@@ -59,15 +59,27 @@ const stopModlaLoading = () => {
     loading.style.display = 'none';
 }
 
-const openAddOrEditProductModal = async (params) => {
+const openAddOrEditProductModal = async (
+    id,
+    productName,
+    productDescription,
+    productPrice,
+    productCover
+) => {
+    const params = {
+        id,
+        productName,
+        productDescription,
+        productPrice,
+        productCover
+    };
+
     defaultErrors.forEach(item => clearError(item));
 
     const modal = document.getElementById("addOrUpdateProductModal");
     const closeButton = document.getElementsByClassName("close")[0];
 
-    await resolveModalData({
-        ...params
-    });
+    await resolveModalData(params);
 
     modal.style.display = 'block';
 
