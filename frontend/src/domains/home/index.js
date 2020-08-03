@@ -32,7 +32,7 @@ const loadProducts = async () => {
 const callRepositoryToCreateOrUpdate = async (id, inputsValues) => {
     let isUpdate = false;
 
-    if (id && !isNaN(+id)) {
+    if (id) {
         await updateProduct({
             id,
             ...inputsValues

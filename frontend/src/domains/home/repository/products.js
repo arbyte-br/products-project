@@ -34,7 +34,7 @@ const updateProduct = async ({
     productCover: cover,
     id
 }) => {
-    const URL = `${defaultURL}?id=${id}`;
+    const URL = `${defaultURL}/${id}`;
 
     return axios.put(URL, {
         name,
